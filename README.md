@@ -22,7 +22,3 @@ Website resmi **Terminal Coffee Alam Barajo** — cafe kopi murah berkualitas di
 - Geo meta tags
 - Canonical URL
 - sitemap.xml & robots.txt
-
-## Live Site
-
-[terminalcoffeeab.com](https://terminalcoffeeab.com)
