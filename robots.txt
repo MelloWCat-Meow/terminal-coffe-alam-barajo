@@ -4,4 +4,4 @@ Allow: /
 Disallow: /css/
 Disallow: /js/
 
-Sitemap: https://terminalcoffeeab.com/sitemap.xml
+Sitemap: https://terminalcoffee.vercel.app/sitemap.xml
