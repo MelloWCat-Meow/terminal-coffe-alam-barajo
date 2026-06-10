@@ -251,9 +251,9 @@ nav {
 /* HERO */
 .hero {
     position: relative;
-    min-height: 100svh;
+    min-height: calc(100svh - 64px); /* dikurangi tinggi navbar sticky agar tidak overflow */
     display: flex;
-    align-items: flex-start; /* sebelumnya: center */
+    align-items: center;
     background: linear-gradient(135deg, #0d1a0f 0%, #1a2e14 35%, #2c3a1e 65%, #1a1a12 100%);
     overflow: hidden;
 }
@@ -275,7 +275,7 @@ nav {
 .hero-content {
     position: relative;
     z-index: 2;
-    padding: 48px 60px 60px;
+    padding: 32px 60px;
     max-width: 660px;
 }
 .hero-badge {
@@ -290,7 +290,7 @@ nav {
     text-transform: uppercase;
     padding: 6px 14px;
     border-radius: 20px;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     font-weight: 600;
 }
 .badge-dot {
@@ -314,11 +314,11 @@ nav {
 }
 .hero h1 {
     font-family: "Playfair Display", serif;
-    font-size: clamp(32px, 4.5vw, 58px);
+    font-size: clamp(30px, 4vw, 50px);
     font-weight: 900;
     color: var(--white);
-    line-height: 1.1;
-    margin-bottom: 20px;
+    line-height: 1.08;
+    margin-bottom: 16px;
 }
 .hero h1 em {
     font-style: italic;
@@ -327,18 +327,18 @@ nav {
 .hero p {
     color: #b5bfb7;
     font-size: 15px;
-    line-height: 1.75;
-    margin-bottom: 32px;
+    line-height: 1.6;
+    margin-bottom: 22px;
     max-width: 480px;
 }
 .hero-stats {
     display: flex;
     align-items: center;
-    margin-bottom: 36px;
+    margin-bottom: 22px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
-    padding: 16px 0;
+    padding: 12px 0;
     width: fit-content;
     backdrop-filter: blur(4px);
 }
@@ -1197,7 +1197,7 @@ footer {
 /* RESPONSIVE ≤768px */
 @media (max-width: 768px) {
     .hero-content {
-        padding: 60px 28px;
+        padding: 32px 28px;
         max-width: 100%;
     }
     .hero h1 {
@@ -1260,10 +1260,10 @@ footer {
 /* RESPONSIVE ≤480px */
 @media (max-width: 480px) {
     .hero {
-        align-items: flex-start;
+        align-items: center;
     }
     .hero-content {
-        padding: 40px 20px;
+        padding: 28px 20px;
     }
     .hero h1 {
         font-size: 28px;
@@ -1306,5 +1306,31 @@ footer {
     .about-btns a {
         text-align: center;
         justify-content: center;
+    }
+}
+
+/* LAYAR PENDEK: padatkan hero agar semua konten + tombol muat tanpa scroll */
+@media (max-height: 720px) {
+    .hero-content {
+        padding: 20px 60px;
+    }
+    .hero-badge {
+        margin-bottom: 12px;
+    }
+    .hero h1 {
+        font-size: clamp(26px, 3.4vw, 40px);
+        margin-bottom: 12px;
+    }
+    .hero p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 16px;
+    }
+    .hero-stats {
+        margin-bottom: 16px;
+        padding: 10px 0;
+    }
+    .hero-scroll-hint {
+        display: none;
     }
 }
